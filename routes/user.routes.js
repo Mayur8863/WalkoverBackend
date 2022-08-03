@@ -24,4 +24,9 @@ module.exports = function(app) {
     [authJwt.verifyToken, authJwt.isAdmin],
     controller.adminBoard
   );
+  app.get(
+    "/api/test/admin/:name",
+    [authJwt.verifyToken, authJwt.isAdmin],
+    controller.userFindAge
+  );
 };
